@@ -30,3 +30,42 @@
  *
  *       See the tests in test/CrossBodyBagTest.java for examples.
  */
+
+public class CrossbodyBag extends Bag {
+
+    private int numberOfStraps;
+
+    public CrossbodyBag(String color, int capacity, int numOfStraps) {
+        super(color, capacity);
+        numberOfStraps = numOfStraps;
+    }
+
+    public int getNumberOfStraps() {
+        return numberOfStraps;
+    }
+
+    /**
+     * Increase the capacity of this bag by 2.
+     */
+    @Override
+    public void enhance() {
+        super.increaseCapacity(2);
+    }
+
+    /**
+     * Return the details of this Crossbody Bag.
+
+     * @return the details of this Crossbody Bag.
+     */
+    @Override
+    public String toString() {
+        return super.getColor() + " Crossbody Bag with " + numberOfStraps + " straps " +
+                "(" + super.getNumberOfContents() + " / " + super.getCapacity() + ")";
+    }
+
+// The toString method should be overridden to return a string in the
+// in the same form as Bag's toString but with the original "Bag" part
+// of the string replaced by:
+// Crossbody Bag with {numberOfStraps} straps
+
+}
